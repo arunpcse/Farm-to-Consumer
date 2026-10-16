@@ -282,11 +282,18 @@ function Orders() {
                       <div className="order-items-table">
                         {order.items?.map((item, idx) => (
                           <div key={idx} className="order-item-tile">
-                            <img
-                              src={item.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=100'}
-                              alt={item.name}
-                              className="tile-img"
-                            />
+                            {item.image ? (
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                className="tile-img"
+                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                              />
+                            ) : (
+                              <div className="tile-img" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e8f5e9', fontSize: '1.4rem' }}>
+                                🌱
+                              </div>
+                            )}
                             <div className="tile-info">
                               <span className="tile-name">{item.name}</span>
                               <span className="tile-farmer">👨‍🌾 {item.farmerName}</span>

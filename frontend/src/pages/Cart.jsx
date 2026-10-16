@@ -65,11 +65,18 @@ function Cart() {
                   <div key={id} className="cart-item-row">
                     {/* Product Details */}
                     <div className="cart-item-product">
-                      <img
-                        src={item.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=200'}
-                        alt={item.name}
-                        className="cart-item-img"
-                      />
+                      {item.image ? (
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="cart-item-img"
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                        />
+                      ) : (
+                        <div className="cart-item-img" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e8f5e9', fontSize: '1.75rem' }}>
+                          🌱
+                        </div>
+                      )}
                       <div className="cart-item-meta">
                         <span className="cart-item-category">{item.category || 'Farm Fresh'}</span>
                         <h3 className="cart-item-title">{item.name}</h3>

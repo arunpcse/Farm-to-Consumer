@@ -6,11 +6,11 @@ import ProductCard from '../components/ProductCard';
 import './Home.css';
 
 const CATEGORIES = [
-  { name: 'Vegetables', count: '18+ Varieties', img: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80' },
-  { name: 'Fruits', count: '12+ Harvests', img: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=600&q=80' },
-  { name: 'Grains & Pulses', count: 'Single-Origin Rice', img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80' },
-  { name: 'Dairy & Organic', count: 'Pure A2 & Honey', img: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=600&q=80' },
-  { name: 'Herbs & Spices', count: 'Salem Curcumin', img: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80' },
+  { name: 'Vegetables', count: '18+ Varieties', icon: '🥬', bg: 'linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%)', desc: 'Vine-Ripened & Farm Fresh' },
+  { name: 'Fruits', count: '12+ Harvests', icon: '🍎', bg: 'linear-gradient(135deg, #e65100 0%, #bf360c 100%)', desc: 'Tree-Matured Hill Fruits' },
+  { name: 'Grains & Pulses', count: 'Single-Origin Rice', icon: '🌾', bg: 'linear-gradient(135deg, #b7950b 0%, #7d6608 100%)', desc: 'Heritage Paddy & Pulses' },
+  { name: 'Dairy & Organic', count: 'Pure A2 & Honey', icon: '🥛', bg: 'linear-gradient(135deg, #0277bd 0%, #01579b 100%)', desc: 'Country Cow Milk & Cold-Pressed' },
+  { name: 'Herbs & Spices', count: 'Salem Curcumin', icon: '🌿', bg: 'linear-gradient(135deg, #558b2f 0%, #33691e 100%)', desc: 'Salem Turmeric & Pepper' },
 ];
 
 const TRUST_METRICS = [
@@ -141,16 +141,17 @@ function Home() {
           </div>
 
           <div className="hm-hero-visual">
-            <div className="hm-visual-card">
-              <img
-                src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=900&q=80"
-                alt="Fresh Vine Tomatoes"
-                className="hm-visual-img"
-              />
+            <div className="hm-visual-card" style={{ background: 'linear-gradient(135deg, #183e20 0%, #265d34 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '340px' }}>
+              <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+                <span style={{ fontSize: '5rem', display: 'block', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.2))' }}>🍅</span>
+                <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.18)', color: '#ffffff', fontSize: '0.76rem', fontWeight: 700, padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '10px' }}>
+                  🌿 Direct Farm Harvest Lot
+                </span>
+              </div>
               <div className="hm-visual-overlay">
-                <div className="hm-vo-pill">🌿 Today's Harvest Lot</div>
-                <h3>Organic Farm Tomatoes</h3>
-                <p>📍 Ramasamy Farms · Perundurai, Erode</p>
+                <div className="hm-vo-pill">🌱 Picked Today, 06:00 AM</div>
+                <h3>Organic Farm Tomatoes (நாட்டு தக்காளி)</h3>
+                <p>📍 Ramasamy Natural Farms · Perundurai, Erode</p>
                 <div className="hm-vo-foot">
                   <span className="hm-vo-price">₹38 / kg</span>
                   <span className="hm-vo-share">82% directly paid to farmer</span>
@@ -201,12 +202,15 @@ function Home() {
                 to={`/products?category=${encodeURIComponent(cat.name)}`}
                 className="hm-cat-card"
               >
-                <div className="hm-cat-media">
-                  <img src={cat.img} alt={cat.name} loading="lazy" />
+                <div className="hm-cat-media" style={{ background: cat.bg, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ fontSize: '3.5rem', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.15))' }}>{cat.icon}</span>
+                  <span style={{ background: 'rgba(0,0,0,0.25)', color: '#ffffff', fontSize: '0.72rem', fontWeight: 700, padding: '2px 8px', borderRadius: '12px', marginTop: '6px' }}>
+                    {cat.count}
+                  </span>
                 </div>
                 <div className="hm-cat-info">
                   <h3>{cat.name}</h3>
-                  <span className="hm-cat-count">{cat.count}</span>
+                  <span className="hm-cat-count">{cat.desc}</span>
                 </div>
               </Link>
             ))}

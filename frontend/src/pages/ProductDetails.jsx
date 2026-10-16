@@ -6,7 +6,13 @@ import DirectInquiryModal from '../components/DirectInquiryModal';
 import ProductCard from '../components/ProductCard';
 import './ProductDetails.css';
 
-const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80';
+const CATEGORY_META = {
+  'Vegetables': { icon: '🥬', bg: 'linear-gradient(135deg, #e8f5e9, #c8e6c9)', color: '#2e7d32' },
+  'Fruits': { icon: '🍎', bg: 'linear-gradient(135deg, #fff3e0, #ffe0b2)', color: '#e65100' },
+  'Grains & Pulses': { icon: '🌾', bg: 'linear-gradient(135deg, #fef9e7, #fdebd0)', color: '#b7950b' },
+  'Dairy & Organic': { icon: '🥛', bg: 'linear-gradient(135deg, #e1f5fe, #b3e5fc)', color: '#0277bd' },
+  'Herbs & Spices': { icon: '🌿', bg: 'linear-gradient(135deg, #f1f8e9, #dcedc8)', color: '#558b2f' },
+};
 
 function formatDate(val) {
   if (!val) return 'Recently harvested';
@@ -145,12 +151,21 @@ function ProductDetails() {
         <div className="pd-container pd-grid">
           {/* Media Column */}
           <div className="pd-media-col">
-            <div className="pd-image-frame">
-              <img
-                src={product.image || FALLBACK_IMAGE}
-                alt={product.name}
-                className="pd-main-image"
-              />
+            <div className="pd-image-frame" style={{ background: (CATEGORY_META[product.category] || {}).bg || 'linear-gradient(135deg, #e8f5e9, #c8e6c9)' }}>
+              {product.image ? (
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="pd-main-image"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+              ) : null}
+              <div className="pd-fallback-banner" style={{ display: product.image ? 'none' : 'flex' }}>
+                <span style={{ fontSize: '4.5rem' }}>{(CATEGORY_META[product.category] || {}).icon || '🌱'}</span>
+                <span style={{ fontSize: '1.1rem', fontWeight: 700, color: (CATEGORY_META[product.category] || {}).color || '#2e7d32', marginTop: 8 }}>
+                  {product.category || 'Fresh Harvest'}
+                </span>
+              </div>
               <div className="pd-badges-overlay">
                 {product.isOrganic && <span className="pd-badge-organic">🌿 100% Certified Organic</span>}
                 <span className="pd-badge-category">{product.category || 'Fresh Harvest'}</span>

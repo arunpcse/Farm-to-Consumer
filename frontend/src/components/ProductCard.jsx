@@ -1,8 +1,14 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
-const FALLBACK =
-  'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80';
+const CATEGORY_META = {
+  'Vegetables': { icon: '🥬', bg: 'linear-gradient(135deg, #e8f5e9, #c8e6c9)', color: '#2e7d32' },
+  'Fruits': { icon: '🍎', bg: 'linear-gradient(135deg, #fff3e0, #ffe0b2)', color: '#e65100' },
+  'Grains & Pulses': { icon: '🌾', bg: 'linear-gradient(135deg, #fef9e7, #fdebd0)', color: '#b7950b' },
+  'Dairy & Organic': { icon: '🥛', bg: 'linear-gradient(135deg, #e1f5fe, #b3e5fc)', color: '#0277bd' },
+  'Herbs & Spices': { icon: '🌿', bg: 'linear-gradient(135deg, #f1f8e9, #dcedc8)', color: '#558b2f' },
+};
 
 function formatDate(value) {
   if (!value) return null;
@@ -12,15 +18,29 @@ function formatDate(value) {
 }
 
 function ProductCard({ item, onAdd, inCart }) {
+  const [imgError, setImgError] = useState(false);
   const harvest = formatDate(item.harvestDate);
   const farmerLink = item.farmerId ? `/farmer/${item.farmerId}` : '/find-farmers';
   const productLink = `/products/${item._id || item.id}`;
+  const meta = CATEGORY_META[item.category] || { icon: '🌱', bg: 'linear-gradient(135deg, #e8f5e9, #c8e6c9)', color: '#2e7d32' };
 
   return (
     <article className="fh-product-card">
       <Link to={productLink} className="fh-product-card-media-link" aria-label={`View ${item.name} details`}>
-        <div className="fh-product-card-media">
-          <img src={item.image || FALLBACK} alt={item.name} loading="lazy" />
+        <div className="fh-product-card-media" style={{ background: meta.bg }}>
+          {item.image && !imgError ? (
+            <img
+              src={item.image}
+              alt={item.name}
+              loading="lazy"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div className="fh-product-placeholder-badge" style={{ color: meta.color }}>
+              <span className="fh-placeholder-icon">{meta.icon}</span>
+              <span className="fh-placeholder-cat">{item.category || 'Fresh Produce'}</span>
+            </div>
+          )}
           {item.category && <span className="fh-product-chip">{item.category}</span>}
         </div>
       </Link>
