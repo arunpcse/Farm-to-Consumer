@@ -1,0 +1,148 @@
+.fh-product-card {
+  background: var(--fh-white);
+  border: 1px solid var(--fh-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.fh-product-card:hover {
+  border-color: var(--fh-olive);
+  transform: translateY(-2px);
+}
+
+.fh-product-card-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--fh-sage);
+}
+
+.fh-product-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fh-product-chip {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  background: var(--fh-white);
+  color: var(--fh-primary);
+  border: 1px solid var(--fh-border);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+}
+
+.fh-product-card-body {
+  padding: 0.95rem 1rem 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.fh-product-farm,
+.fh-product-harvest,
+.fh-product-stock {
+  font-size: 0.75rem;
+  color: var(--fh-text-muted);
+  margin: 0;
+}
+
+.fh-product-card-media-link {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.fh-product-card-body h3 {
+  font-size: 1.05rem;
+  margin: 0.2rem 0 0.15rem;
+  color: var(--fh-text);
+}
+
+.fh-product-title-link {
+  color: var(--fh-text, #2D3748);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.fh-product-title-link:hover {
+  color: var(--fh-primary, #244C3A);
+}
+
+.fh-product-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+}
+
+.fh-product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fh-primary);
+  margin: 0;
+}
+
+.fh-product-price span {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--fh-text-muted);
+}
+
+.fh-product-add {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--fh-primary);
+  color: var(--fh-white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.fh-product-add:hover:not(:disabled) {
+  background: var(--fh-primary-hover);
+  transform: scale(1.05);
+}
+
+.fh-product-add:disabled {
+  background: #c9cdc8;
+  cursor: not-allowed;
+}
+
+.fh-product-farmer-link {
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .fh-product-card {
+    border-radius: var(--fh-radius);
+  }
+
+  .fh-product-card-body {
+    padding: 0.85rem 0.9rem 0.95rem;
+  }
+
+  .fh-product-card-body h3 {
+    font-size: 1rem;
+  }
+
+  .fh-product-price {
+    font-size: 1rem;
+  }
+}

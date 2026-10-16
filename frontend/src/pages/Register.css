@@ -1,0 +1,246 @@
+/* FreshHarvest Modern Register Page Styling */
+
+.reg-page {
+  min-height: calc(100vh - var(--fh-nav-h, 70px));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fh-bg, #FAF9F5);
+  padding: 40px 20px 60px;
+}
+
+.reg-card {
+  width: 100%;
+  max-width: 680px;
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: var(--fh-radius-lg, 14px);
+  padding: 36px 40px;
+  box-shadow: 0 8px 24px rgba(30, 63, 32, 0.05);
+}
+
+.reg-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.reg-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #B56E43;
+  margin-bottom: 6px;
+}
+
+.reg-header h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--fh-primary, #1E3F20);
+  margin-bottom: 6px;
+}
+
+.reg-sub {
+  font-size: 0.92rem;
+  color: var(--fh-text-muted, #656C62);
+}
+
+/* Alerts */
+.reg-alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.reg-alert-error {
+  background-color: #FFF5F5;
+  color: #C53030;
+  border: 1px solid #FED7D7;
+  border-left: 4px solid #E53E3E;
+}
+
+.reg-alert-success {
+  background-color: #E7EFE4;
+  color: #1E3F20;
+  border: 1px solid #CFDEC9;
+  border-left: 4px solid #2E7D32;
+}
+
+/* Role Selector */
+.reg-role-section {
+  margin-bottom: 24px;
+}
+
+.reg-field-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--fh-primary, #1E3F20);
+  margin-bottom: 10px;
+}
+
+.reg-roles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.reg-role-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: var(--fh-radius, 10px);
+  background-color: #FAF9F5;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.reg-role-card:hover {
+  background-color: #ffffff;
+  border-color: var(--fh-primary, #1E3F20);
+  transform: translateY(-1px);
+}
+
+.reg-role-card.active {
+  background-color: #E7EFE4;
+  border-color: var(--fh-primary, #1E3F20);
+  box-shadow: 0 0 0 2px var(--fh-primary, #1E3F20);
+}
+
+.reg-rc-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.reg-rc-info strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--fh-primary, #1E3F20);
+  margin-bottom: 2px;
+}
+
+.reg-rc-info p {
+  font-size: 0.78rem;
+  color: var(--fh-text-muted, #656C62);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Form Styles */
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reg-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.reg-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reg-group label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #2D3748;
+}
+
+.reg-group input,
+.reg-group select {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: #2D3748;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reg-group input:focus,
+.reg-group select:focus {
+  border-color: var(--fh-primary, #1E3F20);
+  box-shadow: 0 0 0 3px rgba(30, 63, 32, 0.15);
+}
+
+/* Role Specific Fields */
+.reg-role-fields {
+  background-color: #FAF9F5;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.reg-role-fields h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fh-primary, #1E3F20);
+  margin-bottom: 14px;
+}
+
+.reg-btn-submit {
+  background-color: var(--fh-primary, #1E3F20);
+  color: #ffffff;
+  border: none;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 6px;
+}
+
+.reg-btn-submit:hover:not(:disabled) {
+  background-color: #162E18;
+  transform: translateY(-1px);
+}
+
+.reg-btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reg-footer-link {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--fh-text-muted, #656C62);
+  margin-top: 20px;
+}
+
+.reg-footer-link a {
+  color: var(--fh-primary, #1E3F20);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.reg-footer-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .reg-card {
+    padding: 24px 20px;
+  }
+  .reg-roles-grid {
+    grid-template-columns: 1fr;
+  }
+  .reg-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

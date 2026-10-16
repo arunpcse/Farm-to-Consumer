@@ -1,0 +1,369 @@
+.del-dashboard-page {
+  max-width: 1100px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.del-header {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.driver-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.driver-avatar {
+  width: 64px;
+  height: 64px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.driver-badge-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.badge-role {
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.status-indicator {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.status-indicator.online {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-indicator.offline {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.driver-info h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin: 0 0 0.25rem;
+  font-weight: 800;
+}
+
+.vehicle-details {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.btn-duty-toggle {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-offline {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.btn-offline:hover {
+  background: #fecaca;
+}
+
+.btn-online {
+  background: #2e6949;
+  color: #ffffff;
+}
+
+.btn-online:hover {
+  background: #235239;
+}
+
+.del-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.stat-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.875rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0.35rem;
+}
+
+.stat-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.stat-trend {
+  font-size: 0.78rem;
+  color: #2e6949;
+  font-weight: 600;
+}
+
+.del-main-section h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+}
+
+.del-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.del-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.del-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+}
+
+.order-tag {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+.del-status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.del-status-badge.assigned {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.del-status-badge.picked_up {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.del-status-badge.out_for_delivery {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.del-status-badge.delivered {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.del-route {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.route-stop {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.stop-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #334155;
+  font-weight: 800;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pickup .stop-marker {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.dropoff .stop-marker {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.stop-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stop-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.stop-address {
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.recipient-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.phone-btn {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.phone-btn:hover {
+  text-decoration: underline;
+}
+
+.del-notes {
+  background: #f8fafc;
+  border-left: 3px solid #3b82f6;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0 0.375rem 0.375rem 0;
+  font-size: 0.82rem;
+  color: #334155;
+  margin-bottom: 1.25rem;
+}
+
+.del-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.fee-info {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.fee-info strong {
+  font-size: 1.15rem;
+  color: #16a34a;
+}
+
+.step-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-step {
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pickup-btn {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+.pickup-btn:hover {
+  background: #d97706;
+}
+
+.transit-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.transit-btn:hover {
+  background: #1d4ed8;
+}
+
+.deliver-btn {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.deliver-btn:hover {
+  background: #15803d;
+}
+
+.del-empty {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.empty-emoji {
+  font-size: 2.5rem;
+}

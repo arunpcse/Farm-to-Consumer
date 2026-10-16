@@ -1,0 +1,202 @@
+/* FreshHarvest Terms & Policies Styles */
+
+.terms-policies-page {
+  background-color: var(--fh-bg, #F7F6F0);
+  min-height: calc(100vh - 140px);
+  padding-bottom: 60px;
+}
+
+.tp-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tp-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--fh-border, #EAE6D9);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.tp-kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fh-muted, #68785B);
+  margin-bottom: 8px;
+}
+
+.tp-header h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--fh-primary, #244C3A);
+  margin-bottom: 12px;
+}
+
+.tp-header p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #4A5568;
+  line-height: 1.6;
+}
+
+.tp-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+  margin-top: 36px;
+  align-items: start;
+}
+
+/* Sidebar */
+.tp-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tp-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #EAE6D9);
+  border-radius: var(--fh-radius, 8px);
+  padding: 12px;
+}
+
+.tp-nav-btn {
+  text-align: left;
+  background: none;
+  border: 1px solid transparent;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #4A5568;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tp-nav-btn:hover {
+  background-color: #F7F6F0;
+  color: var(--fh-primary, #244C3A);
+}
+
+.tp-nav-btn.active {
+  background-color: #E8EEE5;
+  color: var(--fh-primary, #244C3A);
+  border-color: #D1DEC9;
+}
+
+.tp-support-box {
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #EAE6D9);
+  border-radius: var(--fh-radius, 8px);
+  padding: 20px;
+}
+
+.tp-support-box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fh-primary, #244C3A);
+  margin-bottom: 6px;
+}
+
+.tp-support-box p {
+  font-size: 0.85rem;
+  color: var(--fh-muted, #68785B);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.tp-support-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fh-primary, #244C3A);
+  text-decoration: none;
+}
+
+.tp-support-link:hover {
+  text-decoration: underline;
+}
+
+/* Content Area */
+.tp-content {
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #EAE6D9);
+  border-radius: var(--fh-radius, 8px);
+  padding: 36px 40px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+}
+
+.tp-doc h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--fh-primary, #244C3A);
+  margin-bottom: 4px;
+}
+
+.tp-updated {
+  font-size: 0.82rem;
+  color: var(--fh-muted, #68785B);
+  margin-bottom: 24px;
+}
+
+.tp-doc h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--fh-primary, #244C3A);
+  margin: 28px 0 10px;
+}
+
+.tp-doc p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+.tp-doc ul {
+  margin: 12px 0 20px 20px;
+  color: #374151;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.tp-doc li {
+  margin-bottom: 8px;
+}
+
+.tp-highlight-card {
+  background-color: #F8FAF7;
+  border-left: 4px solid var(--fh-primary, #244C3A);
+  padding: 18px 22px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0 24px;
+}
+
+.tp-highlight-card h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.tp-highlight-card p {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .tp-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .tp-content {
+    padding: 24px 20px;
+  }
+}

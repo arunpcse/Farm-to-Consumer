@@ -1,0 +1,312 @@
+.find-farmers-page {
+  min-height: calc(100vh - var(--fh-nav-h));
+  background: var(--fh-bg);
+}
+
+.ff-header {
+  background: var(--fh-ivory);
+  border-bottom: 1px solid var(--fh-border);
+  color: var(--fh-text);
+  padding: 2.5rem 1.5rem 2rem;
+}
+
+.ff-header-inner {
+  max-width: var(--fh-max);
+  margin: 0 auto;
+}
+
+.ff-title {
+  font-size: 1.75rem;
+  color: var(--fh-primary);
+  margin: 0 0 0.5rem;
+}
+
+.ff-subtitle {
+  font-size: 1rem;
+  color: var(--fh-text-muted);
+  margin: 0;
+  max-width: 38rem;
+}
+
+.ff-layout {
+  max-width: var(--fh-max);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.ff-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+}
+
+.ff-sidebar-card {
+  background: var(--fh-white);
+  border: 1px solid var(--fh-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.ff-sidebar-title {
+  font-size: 0.95rem;
+  color: var(--fh-primary);
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--fh-border);
+}
+
+.ff-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.85rem;
+}
+
+.ff-form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--fh-olive);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ff-form-group input,
+.ff-form-group select {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--fh-border);
+  border-radius: var(--fh-radius);
+  font-size: 0.9rem;
+  color: var(--fh-text);
+  background: var(--fh-white);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ff-form-group input:focus,
+.ff-form-group select:focus {
+  outline: 2px solid var(--fh-primary);
+  outline-offset: -1px;
+  border-color: var(--fh-primary);
+  box-shadow: var(--fh-focus);
+}
+
+.ff-filter-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ff-btn-apply {
+  background: var(--fh-primary);
+  color: white;
+  border: none;
+  border-radius: var(--fh-radius);
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ff-btn-clear {
+  background: var(--fh-white);
+  color: var(--fh-text);
+  border: 1px solid var(--fh-border);
+  border-radius: var(--fh-radius);
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ff-main { flex: 1; min-width: 0; }
+
+.ff-results-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.ff-result-count {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ff-active-filter {
+  background: var(--fh-sage);
+  color: var(--fh-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.ff-loading {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--fh-text-muted);
+}
+
+.ff-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--fh-border);
+  border-top-color: var(--fh-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 0.75rem;
+}
+
+.ff-error {
+  background: var(--fh-danger-bg);
+  border: 1px solid #e4cfc9;
+  color: var(--fh-danger);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.ff-empty {
+  background: var(--fh-white);
+  border: 1px dashed var(--fh-border);
+  border-radius: 8px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.ff-empty h3 { margin-bottom: 0.4rem; }
+.ff-empty p { color: var(--fh-text-muted); margin-bottom: 1rem; }
+
+.farmers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.1rem;
+}
+
+.farmer-card {
+  background: var(--fh-white);
+  border: 1px solid var(--fh-border);
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.farmer-card:hover {
+  border-color: var(--fh-olive);
+  transform: translateY(-2px);
+}
+
+.farmer-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.farmer-avatar-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+  background: var(--fh-sage);
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.farmer-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.farmer-avatar-emoji {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--fh-primary);
+}
+
+.farmer-farm-name {
+  font-size: 1rem;
+  margin: 0 0 0.15rem;
+}
+
+.farmer-person-name,
+.farmer-location {
+  font-size: 0.82rem;
+  color: var(--fh-text-muted);
+  margin: 0;
+}
+
+.farmer-verified-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--fh-sage);
+  color: var(--fh-primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.farmer-card-body {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.fstar-full { color: var(--fh-terracotta); }
+.fstar-half { color: #c9926e; }
+.fstar-empty { color: var(--fh-border); }
+
+.farmer-rating-num { font-weight: 700; font-size: 0.85rem; }
+.farmer-review-count { font-size: 0.8rem; color: var(--fh-text-muted); }
+
+.farmer-card-stats {
+  display: flex;
+  background: var(--fh-ivory);
+  border: 1px solid var(--fh-border);
+  border-radius: 6px;
+  padding: 0.65rem;
+}
+
+.fcs-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.fcs-value { font-size: 0.85rem; font-weight: 700; }
+.fcs-label { font-size: 0.68rem; color: var(--fh-olive); text-transform: uppercase; }
+.fcs-divider { width: 1px; background: var(--fh-border); }
+
+.farmer-type-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--fh-primary);
+  background: var(--fh-sage);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.farmer-view-btn {
+  display: block;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .ff-layout { flex-direction: column; }
+  .ff-sidebar { width: 100%; position: static; }
+}

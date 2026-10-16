@@ -1,0 +1,204 @@
+.farmer-profile-page { background: var(--fh-bg); min-height: 100vh; }
+
+.fp-hero {
+  background: var(--fh-ivory);
+  border-bottom: 1px solid var(--fh-border);
+  color: var(--fh-text);
+  padding: 2.5rem 1.5rem 0;
+}
+
+.fp-hero-inner {
+  max-width: var(--fh-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.fp-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  background: var(--fh-sage);
+  border: 1px solid var(--fh-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fh-primary);
+}
+
+.fp-hero-info { padding-bottom: 1.75rem; }
+.fp-farm-name { font-size: 1.75rem; color: var(--fh-primary); margin-bottom: 0.25rem; }
+.fp-farmer-name { font-size: 1rem; color: var(--fh-text-muted); margin-bottom: 0.75rem; }
+.fp-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.85rem; }
+.fp-badge {
+  background: var(--fh-white);
+  border: 1px solid var(--fh-border);
+  color: var(--fh-text);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.fp-badge.verified { background: var(--fh-sage); color: var(--fh-primary); border-color: transparent; }
+.fp-badge.organic { background: var(--fh-ivory); }
+.fp-rating-row { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; }
+.fp-star { color: var(--fh-terracotta); }
+.fp-star-empty { color: var(--fh-border); }
+.fp-action-btns { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.fp-btn-contact {
+  background: var(--fh-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fp-btn-bulk {
+  background: white;
+  color: var(--fh-primary);
+  border: 1px solid var(--fh-primary);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.fp-content {
+  max-width: var(--fh-max);
+  margin: 1.75rem auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.fp-tabs {
+  display: flex;
+  gap: 0.15rem;
+  border-bottom: 1px solid var(--fh-border);
+  margin-bottom: 1.5rem;
+}
+.fp-tab {
+  padding: 0.7rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fh-text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+}
+.fp-tab.active { color: var(--fh-primary); border-bottom-color: var(--fh-primary); }
+
+.fp-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.fp-info-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--fh-border);
+  padding: 1.25rem;
+  transition: border-color 0.15s ease;
+}
+
+.fp-info-card:hover {
+  border-color: var(--fh-olive);
+}
+.fp-info-card h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fh-olive);
+  margin-bottom: 0.75rem;
+}
+.fp-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--fh-border);
+  font-size: 0.9rem;
+}
+.fp-info-label { color: var(--fh-text-muted); }
+
+.fp-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.fp-product-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--fh-border);
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.fp-product-card:hover {
+  border-color: var(--fh-olive);
+  transform: translateY(-2px);
+}
+.fp-product-img { width: 100%; height: 160px; object-fit: cover; }
+.fp-product-img-placeholder {
+  width: 100%;
+  height: 160px;
+  background: var(--fh-sage);
+}
+.fp-product-body { padding: 1rem; }
+.fp-product-price { font-weight: 700; color: var(--fh-primary); }
+.fp-add-btn {
+  background: var(--fh-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fp-surplus-tag {
+  font-size: 0.72rem;
+  background: var(--fh-warning-bg);
+  color: var(--fh-terracotta);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.fp-review-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--fh-border);
+  padding: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.fp-contact-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(51, 58, 51, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.fp-contact-modal {
+  background: white;
+  border-radius: 8px;
+  padding: 1.75rem;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid var(--fh-border);
+}
+.fp-contact-phone { font-size: 1.25rem; font-weight: 700; color: var(--fh-primary); }
+.fp-contact-close {
+  background: var(--fh-ivory);
+  border: 1px solid var(--fh-border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .fp-hero-inner, .fp-about-grid { grid-template-columns: 1fr; }
+}

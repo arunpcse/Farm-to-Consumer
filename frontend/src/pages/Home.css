@@ -1,0 +1,860 @@
+/* FreshHarvest Modern Marketplace Home Styling */
+
+.home-page {
+  background-color: var(--fh-bg, #FAF9F5);
+  min-height: 100vh;
+}
+
+.hm-container {
+  max-width: var(--fh-max, 1240px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── 1. Hero Section ────────────────────────────────────────── */
+.hm-hero {
+  background: linear-gradient(180deg, #ffffff 0%, #FAF9F5 100%);
+  border-bottom: 1px solid var(--fh-border, #E5E1D5);
+  padding: 50px 0 60px;
+}
+
+.hm-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hm-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #E7EFE4;
+  color: var(--fh-primary, #1E3F20);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid #CFDEC9;
+  margin-bottom: 16px;
+}
+
+.hm-badge-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #5C6E52;
+  border-radius: 50%;
+}
+
+.hm-hero-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  color: var(--fh-primary, #1E3F20);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 16px;
+}
+
+.hm-hero-sub {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #4A5568;
+  margin-bottom: 24px;
+  max-width: 540px;
+}
+
+/* Hero Search Bar */
+.hm-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid var(--fh-border, #E5E1D5);
+  border-radius: 12px;
+  padding: 6px 8px 6px 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  margin-bottom: 14px;
+  max-width: 540px;
+  transition: all 0.2s ease;
+}
+
+.hm-search-bar:focus-within {
+  border-color: var(--fh-primary, #1E3F20);
+  box-shadow: 0 0 0 4px rgba(30, 63, 32, 0.12);
+}
+
+.hm-search-icon {
+  font-size: 1.1rem;
+  margin-right: 10px;
+  opacity: 0.6;
+}
+
+.hm-search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #2D3748;
+  outline: none;
+  font-family: inherit;
+}
+
+.hm-btn-search {
+  background-color: var(--fh-primary, #1E3F20);
+  color: #ffffff;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.hm-btn-search:hover {
+  background-color: #162E18;
+}
+
+/* Quick Tags */
+.hm-quick-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--fh-text-muted, #656C62);
+  margin-bottom: 24px;
+}
+
+.hm-quick-tags button {
+  background: #ffffff;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--fh-primary, #1E3F20);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.hm-quick-tags button:hover {
+  background-color: #E7EFE4;
+  border-color: var(--fh-primary, #1E3F20);
+}
+
+.hm-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hm-btn-primary {
+  background-color: var(--fh-primary, #1E3F20);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 13px 24px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(30, 63, 32, 0.2);
+}
+
+.hm-btn-primary:hover {
+  background-color: #162E18;
+  transform: translateY(-1px);
+}
+
+.hm-btn-secondary {
+  background-color: #ffffff;
+  color: var(--fh-primary, #1E3F20);
+  border: 1px solid var(--fh-border, #E5E1D5);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 13px 22px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.hm-btn-secondary:hover {
+  background-color: #F5F3EC;
+  border-color: var(--fh-primary, #1E3F20);
+}
+
+/* Hero Visual Card */
+.hm-hero-visual {
+  position: relative;
+}
+
+.hm-visual-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hm-visual-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.hm-visual-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(20,40,24,0.95) 100%);
+  color: #ffffff;
+  padding: 40px 24px 20px;
+}
+
+.hm-vo-pill {
+  display: inline-block;
+  background-color: #2E7D32;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.hm-visual-overlay h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.hm-visual-overlay p {
+  font-size: 0.85rem;
+  color: #D1DEC9;
+  margin-bottom: 12px;
+}
+
+.hm-vo-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
+}
+
+.hm-vo-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hm-vo-share {
+  font-size: 0.78rem;
+  color: #A7F3D0;
+  font-weight: 600;
+}
+
+.hm-float-pill {
+  position: absolute;
+  top: 24px;
+  right: -16px;
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: 10px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+.hm-fp-icon {
+  font-size: 1.6rem;
+}
+
+.hm-float-pill strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--fh-primary, #1E3F20);
+}
+
+.hm-float-pill span {
+  font-size: 0.75rem;
+  color: var(--fh-text-muted, #656C62);
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ── 2. Metrics Bar ─────────────────────────────────────────── */
+.hm-metrics-bar {
+  background-color: var(--fh-primary, #1E3F20);
+  color: #ffffff;
+  padding: 24px 0;
+}
+
+.hm-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.hm-metric-val {
+  display: block;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.hm-metric-label {
+  font-size: 0.82rem;
+  color: #D1DEC9;
+}
+
+/* ── 3. Shared Section Styles ───────────────────────────────── */
+.hm-section {
+  padding: 64px 0;
+}
+
+.hm-section-ivory {
+  background-color: #F5F3EC;
+  border-top: 1px solid var(--fh-border, #E5E1D5);
+  border-bottom: 1px solid var(--fh-border, #E5E1D5);
+}
+
+.hm-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hm-head-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+
+.hm-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #B56E43;
+  margin-bottom: 6px;
+}
+
+.hm-section-head h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--fh-primary, #1E3F20);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.hm-section-head p {
+  font-size: 0.95rem;
+  color: var(--fh-text-muted, #656C62);
+  margin: 0;
+}
+
+.hm-link-all {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--fh-primary, #1E3F20);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hm-link-all:hover {
+  text-decoration: underline;
+}
+
+/* Category Grid */
+.hm-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.hm-cat-card {
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: var(--fh-radius, 10px);
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hm-cat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+
+.hm-cat-media {
+  height: 140px;
+  overflow: hidden;
+}
+
+.hm-cat-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hm-cat-card:hover .hm-cat-media img {
+  transform: scale(1.06);
+}
+
+.hm-cat-info {
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.hm-cat-info h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fh-primary, #1E3F20);
+  margin-bottom: 2px;
+}
+
+.hm-cat-count {
+  font-size: 0.78rem;
+  color: var(--fh-text-muted, #656C62);
+}
+
+/* Products Grid */
+.hm-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+/* ── 5. Surplus Deals Banner ────────────────────────────────── */
+.hm-surplus-banner {
+  background: linear-gradient(135deg, #1A3B2B 0%, #2A563C 100%);
+  color: #ffffff;
+  padding: 56px 0;
+}
+
+.hm-sb-inner {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hm-sb-tag {
+  display: inline-block;
+  background-color: #B56E43;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.hm-sb-copy h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.hm-sb-copy p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #D1DEC9;
+  margin-bottom: 24px;
+}
+
+.hm-sb-stats {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.hm-sb-stats strong {
+  display: block;
+  font-size: 1.35rem;
+  color: #ffffff;
+}
+
+.hm-sb-stats span {
+  font-size: 0.78rem;
+  color: #A7F3D0;
+}
+
+.hm-btn-surplus {
+  background-color: #ffffff;
+  color: var(--fh-primary, #1E3F20);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.hm-btn-surplus:hover {
+  background-color: #FAF9F5;
+  transform: translateY(-1px);
+}
+
+.hm-sb-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.hm-sb-badge {
+  background-color: #DC2626;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+}
+
+.hm-sb-card h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 10px 0 4px;
+}
+
+.hm-sb-card p {
+  color: #D1DEC9;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+.hm-sb-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hm-old-price {
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: #A3B899;
+}
+
+.hm-new-price {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hm-save-tag {
+  background-color: #059669;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.hm-sb-timer {
+  display: block;
+  font-size: 0.8rem;
+  color: #FCD34D;
+  font-weight: 600;
+}
+
+/* ── 6. Farmers Grid ────────────────────────────────────────── */
+.hm-farmers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.hm-farmer-card {
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: var(--fh-radius, 10px);
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.hm-farmer-card:hover {
+  transform: translateY(-2px);
+  border-color: #A3BF9E;
+}
+
+.hm-fc-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.hm-fc-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #E7EFE4;
+  color: var(--fh-primary, #1E3F20);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.hm-fc-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--fh-primary, #1E3F20);
+  margin-bottom: 2px;
+}
+
+.hm-fc-farmer {
+  font-size: 0.88rem;
+  color: #4A5568;
+  margin-bottom: 2px;
+}
+
+.hm-fc-loc {
+  font-size: 0.78rem;
+  color: var(--fh-text-muted, #656C62);
+}
+
+.hm-fc-verified {
+  margin-left: auto;
+  background-color: #E7EFE4;
+  color: var(--fh-primary, #1E3F20);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.hm-fc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: #FAF9F5;
+  border-radius: 6px;
+  padding: 10px 12px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.hm-fcs-val {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--fh-primary, #1E3F20);
+}
+
+.hm-fcs-lbl {
+  font-size: 0.7rem;
+  color: var(--fh-text-muted, #656C62);
+}
+
+.hm-fc-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fh-primary, #1E3F20);
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.hm-fc-link:hover {
+  text-decoration: underline;
+}
+
+/* ── 7. B2B Band ────────────────────────────────────────────── */
+.hm-b2b-band {
+  background-color: #ffffff;
+  border-top: 1px solid var(--fh-border, #E5E1D5);
+  border-bottom: 1px solid var(--fh-border, #E5E1D5);
+  padding: 60px 0;
+}
+
+.hm-b2b-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #B56E43;
+  margin-bottom: 8px;
+}
+
+.hm-b2b-copy h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--fh-primary, #1E3F20);
+  max-width: 780px;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.hm-b2b-copy p {
+  font-size: 1rem;
+  color: #4A5568;
+  max-width: 680px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.hm-b2b-features {
+  display: flex;
+  gap: 24px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--fh-primary, #1E3F20);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.hm-b2b-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hm-btn-b2b-primary {
+  background-color: var(--fh-primary, #1E3F20);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.hm-btn-b2b-primary:hover {
+  background-color: #162E18;
+}
+
+.hm-btn-b2b-secondary {
+  background-color: #FAF9F5;
+  color: var(--fh-primary, #1E3F20);
+  border: 1px solid var(--fh-border, #E5E1D5);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.hm-btn-b2b-secondary:hover {
+  background-color: #E7EFE4;
+}
+
+/* ── 8. Steps Grid ──────────────────────────────────────────── */
+.hm-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hm-step-card {
+  background-color: #ffffff;
+  border: 1px solid var(--fh-border, #E5E1D5);
+  border-radius: var(--fh-radius, 10px);
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.hm-step-num {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #B56E43;
+  margin-bottom: 12px;
+}
+
+.hm-step-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--fh-primary, #1E3F20);
+  margin-bottom: 8px;
+}
+
+.hm-step-card p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #4A5568;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hm-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hm-cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hm-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hm-farmers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hm-sb-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hm-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hm-cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hm-products-grid {
+    grid-template-columns: 1fr;
+  }
+  .hm-farmers-grid {
+    grid-template-columns: 1fr;
+  }
+  .hm-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hm-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
